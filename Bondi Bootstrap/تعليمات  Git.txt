@@ -1,0 +1,97 @@
+1-Git Clone 
+ لتنزيل اي مشروع من موقع 
+2-git status
+ لمعرفة حالة ملفات اذا هي مضافة او لا 
+3-git add <file> or *
+ اضافة بيانات في منطقة  staging area   سوا كانت كل ملفات او ملف واحد
+4-git rsest head <file>
+ازالة ملف من منطقة  staging area
+5- git comit -m "description"
+ اضافة جميع ملفات في منطقة local repo 
+6- git push
+اضافة جميع ملفات في Remote Repo
+ _______New Lession 2________
+1-git push <remote repo> <local repo>
+ اضافة جميع ملفات على موقع
+2- git remote -v
+ لمعرفة repo خاص فيك
+ _______New Lession 3________
+1- git pull <remote repo>
+ جلب تعديلات من موقع 
+2-  git config -l
+جلب معلومات خاص فيك
+3-git config --global user.name
+جلب اسم خاص فيك
+4-git config --global user.email
+جلب ايميل خاص فيك
+5-git config --global user.name " "
+تعديل اسم
+6-git config --global user.name " "
+تعديل ايميل
+7- git config --global --edit
+تعديل معلومات من خلال محر
+ _______New Lession 4________
+{تعامل مع public key}
+1-$ ssh-keygen -t rsa -b 4096 -C "1212ypg@gmail.com"
+2-  نسخ معلومات مشفرة والذهاب الى ضبط في كيت هاب ثم سسه واضافة مفتاح مشفر
+3- $ cat ~/.ssh/id_rsa.pub
+جلب مفتاح خاص بك
+4-$ ssh -T git@github.com
+تاكد من عملية
+ _______New Lession 5________
+ كيفية عمل pull request  من اجل مشاركة على نفس مشروع 
+
+ _______New Lession 6________
+Alias  نستعمل من اجل اسم مستعار واختصار تعليمات
+$ git config --global alias.zak status
+$ git config --global alias.cm "commit -m"
+ _______New Lession 7________
+انشاء فروع واستلام مهام محددة
+
+1-git branch zako
+ انشاء برانش من احل مهمة معينة
+git checkout zako
+دخول الى برانش 
+git chechout -b zako
+اختصار عملية انشاء ودخول الى برانش
+git branch -d zako
+حذف برانش بدون عملية حفظ
+git branch -D zako
+حفظ برانش ثم حذفه
+git merge zako
+اولا ندخل الى بر انش اساسي ثم نقوم بالعملية ميرج
+ ||
+طريقة اخرى هي عملية بوش لبرانش بدون عملية ميرج ثم ذهاب الى موقع بالكبس على ميرج
+ _______New Lession 8________
+ تخزين ملفات في خزنة خاص بالغيت وعدم اظهارها في موقع او ستاتيوس
+1-$ git stash 
+تخزين ملفات في ستاش بعد عملية ستاتيوس
+2-$ git stash list
+اظهار ملفات مخفية عندك في ستاش 
+3-$ git stash pop
+جلب بيانات من ستاش واظهارهم بين ملفات ستاتيوس .وحذف ملف من ستاش ثم بعد ذلك نقوم بالعملية بوش 
+$ git stash save "ppo"
+حفظ ملف باسم معين في ستاش 
+$ git stash apply
+جلب بيانات من ملف ستاش وعدم حذف ملف من ستاش وبعجها نقوم بالعملية بوش
+$ git stash pop stah@{0}
+جلب بيانات ثم حذف ملف من ستاش ذو معرف 0 
+$ git stash drop
+حذف ملف من ستاش بدون جلب بيانات 
+$ git stash clear
+حذف جميع ملفات من ستاش بدون جلب بيانات 
+$ git stash show
+عرض محتويات مجلد ما في ستاش 
+ملاحظة :  عند عملية حذف وعرض وعدم تعريف نةع معرف  يقوم بجلب اخر ملف اتم اضافته الى ستاش 
+ _______New Lession 9________
+$ git restore --stage <file name>
+حذف او ارجاع ملف من منطقة stage area
+$ git restore --stage *
+ارجاع جميع ملفات من ستاج اريا بدون تميزز
+
+$ git clean -n
+ارجاع جميع ملفات من منطقة stage area
+وحذفهم ممن مجلد مشروع 
+يجب اولا اضافة  ملفات مرغوبة في منطقة ستاج اريا ثم بعدها نقوم بحذفهم
+ $ git clean -f
+موافقة على عملية 
